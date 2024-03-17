@@ -1,0 +1,54 @@
+---
+import Header from '../components/Header.astro';
+import Calendar from '../components/Calendar.astro';
+import Team from '../components/Team.astro';
+import {Image} from 'astro:assets';
+import Desalinizadora from '../images/content/DesaladoraQuintay.webp'
+---
+
+<section class="py-8 box-border flex flex-col justify-start items-center w-full h-full gap-6">
+			<Header />
+			<section class="flex flex-col gap-3  lg:grid lg:grid-cols-2 lg:gap-10">
+                <section class="flex flex-col gap-3 px-10">
+                    <h2 class="text-2xl font-bold text-black">¿Qué somos?</h2>
+                    <p class="text-lg text-primary-900">Somos un proyecto que se orienta a elaborar una guía de evaluación de impactos ambientales y criterios de sustentabilidad para plantas desalinizadoras de agua de mar mediante la tecnología de osmosis inversa. Esta guía será producto de la investigación que lleva a cabo el equipo de IDRO y tendrá como principal resultado propuestas metodológicas de evaluación de impactos ambientales que dependerán del tamaño de los proyectos.
+                    </p>
+                    
+                    <Image src={Desalinizadora} alt="Equipo" class="w-full h-auto rounded-3xl" />
+                    <p class="text-lg text-secondary-800">El proyecto
+                    IDRO tiene un carácter transdiciplinario para lo cual el núcleo de investigadores abarca disciplinas como la ingeniería ambiental, ingeniería química, ingeniería oceánica, oceanografía, biología marina y economía. Las líneas de investigación principales abordan el impacto ambiental de la operación y construcción de este tipo de plantas, el impacto de la salmuera de descarte sobre especies de interés ecológico y económico, como el loco y erizo, y la dinámica de mezcla de la salmuera de descarte en el mar. Además, debido al interés público que despierta este tema, se abordarán aspectos socioeconómicos, de seguridad hídrica y de calidad del agua.</p>
+                    
+                </section>
+				<section class="px-10 flex flex-col gap-4">
+					<Calendar />
+					<Team />
+				</section>
+				<section class="col-span-2 bg-primary-500 px-10">
+				</section>
+				<section class="flex flex-col gap-3 px-5">
+					<h1 class="text-2xl font-bold text-primary-800">Contexto</h1>
+					<p class="text-lg">En el actual escenario de sequía, la tecnología de osmosis inversa se presenta como una forma atractiva para desalinizar agua de mar y producir agua dulce para el consumo humano, la minería, la agricultura y para la producción de hidrógeno verde.
+
+					</p>
+					<Image src={Desalinizadora} alt="Equipo" class="w-full h-auto rounded-3xl" />
+					<p>
+						Para generar agua dulce mediante este proceso, el agua de mar es captada y circulada por filtros y membranas, generándose tanto agua dulce como agua de descarte, cuya salinidad es superior a la del agua de mar. Esta agua de alta salinidad, que recibe el nombre de salmuera, es luego descargada en el mar. Cabe notar que la producción de 1 litro de agua dulce genera aproximadamente 1,2 litro de salmuera.
+			
+						Las principales preocupaciones ambientales asociadas a esta forma de producción de agua dicen relación con el impacto de esta salmuera en ecosistemas marinos, la cantidad de energía que se requiere para operar estas plantas y la gran cantidad de filtros y membranas que son utilizados, lo que además de generar residuos, se traduce en un aporte al cambio climático y agotamiento de algunos materiales.
+			
+						En la actualidad, el Sistema de Evaluación Ambiental (SEA) cuenta con una Guía para la descripción de proyectos de plantas desalinizadoras en el SEIA que se enfoca en la descripción del emplazamiento, partes y fases del proyecto, además de la legislación ambiental aplicable. Aun cuando la guía identifica los potenciales impactos ambientales asociados a esta actividad, no define metodologías de evaluación que permitan, en función del tamaño de cada planta, establecer su cuantía.
+						
+					</p>
+					<article>
+						<header>
+							<h3 class="text-xl font-bold">Línea 1: Impactos ambientales de desalinizadoras</h3>
+						</header>
+						<p class="text-lg text-primary-600">Mediante la metodología de Análisis de Ciclo de Vida (ACV), cuantificaremos impactos ambientales tales como emisiones de gases de efecto invernadero, agotamiento de recursos (por ejemplo, por recambio de membranas) y consumo de agua dulce, entre otros. La metodología no sólo permite cuantificar los impactos durante la producción de agua dulce, sino también de subprocesos como la producción de filtros y membranas de recambio que también tienen un impacto, por ejemplo, en la generación de gases de efectos invernadero.</p>
+					</article>
+				</section>
+				
+				<section class="px-5">
+					<h2 class="text-2xl font-bold">Financiamiento</h2>
+				</section>
+			</section>
+		</section>
