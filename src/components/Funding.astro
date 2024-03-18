@@ -1,0 +1,32 @@
+---
+import {Image} from 'astro:assets';
+import LogoNegro from '../images/logo/IDRO_logo negro.svg';
+import USM from '../images/logo/usm.png'
+import UNAB from '../images/logo/unab.webp'
+import UV from '../images/logo/uv.png'
+import Anid from '../images/logo/anid.png'
+---
+
+<section class=" flex flex-col items-center md:flex-row justify-around w-full">
+    <Image src={LogoNegro} alt="IDRO" class="w-auto h-60 p-3" />
+    <article class="flex flex-col justify-start items-center md:items-start p-3 gap-2">
+        <header>
+            <h3 class="text-xl font-medium text-gray-400">
+                Desarollador por
+            </h3>
+        </header>
+        <hr class="bg-gray-500 border-1 w-full" />
+        <Image src={USM} alt="USM" class="w-auto h-28 object-contain" />
+        <Image src={UV} alt="UV" class="w-auto h-24 object-contain" />
+        <Image src={UNAB} alt="UNAB" class="w-auto h-24 object-contain" />
+    </article>
+    <article class="flex flex-col justify-start items-center md:items-start p-3 gap-2">
+        <header>
+            <h3 class="text-xl font-medium text-gray-400">
+                Patrocinado por
+            </h3>
+        </header>
+        <hr class="bg-gray-500 w-full" />
+        <Image src={Anid} alt="UV" class="w-auto h-60 object-contain" />
+    </article>
+</section>

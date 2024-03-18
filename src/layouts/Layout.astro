@@ -12,7 +12,7 @@ import AsideBar from './../components/AsideBar.astro'
 		<meta name="generator" content={Astro.generator} />
 		<title>IDRO</title>
 	</head>
-	<body class="m-0 p-0 ">
+	<body class="m-0 p-0 w-full ">
 		<AsideBar />
 		<slot/>
 	</body>
@@ -20,7 +20,7 @@ import AsideBar from './../components/AsideBar.astro'
 <style is:global>
 	html {
 		background: white;
-		background-size: 224px;
+		display: block;
 	}
 	h1, h2, h3, h4, h5, h6 {
 		font-family: ubuntu, sans-serif;

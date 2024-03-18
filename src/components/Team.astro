@@ -1,9 +1,14 @@
 ---
 import HeaderTitle from './HeaderTitle.astro';
+import {Image} from 'astro:assets';
+import Equipo from '../images/content/4730.webp'
 ---
 
 
 <aside class="flex flex-col gap-3">
     <HeaderTitle title="¿Quiénes Somos?" subTitle='Equipo' />
-    <h4 class="text-xl font-semibold text-secondary-400">Próximas presentaciones</h4>
+    <p class="text-lg text-primary-900">
+        El proyecto agrupa a un grupo interdisciplinario de investigadores de la USM, la UV y la UNAB, que investiga los sistemas de desalinización desde la ingeniería, economía y biología marina.
+    </p>
+    <Image class="w-full rounded-3xl" src={Equipo} alt="Equipo" />
 </aside>
