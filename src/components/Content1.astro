@@ -11,12 +11,13 @@ import Linea2 from '../images/content/linea2.webp'
 import Linea3 from '../images/content/linea3.webp'
 import Linea3_2 from '../images/content/linea3_2.webp'
 import HeaderTitle from './HeaderTitle.astro';
+
 ---
 
 <section class="py-8 box-border flex flex-col justify-start items-center w-full h-full gap-6">
 	<Header />
-	<section class="flex flex-col gap-3 lg:grid lg:grid-cols-2 lg:gap-4 2xl:gap-12">
-		<section class="flex flex-col gap-3 px-10">
+	<section class="flex flex-col gap-1 lg:grid lg:grid-cols-2 lg:gap-2 2xl:gap-5">
+		<section class="flex flex-col gap-3 pl-10 pr-2" id="somos">
 			<HeaderTitle title="¿Qué somos?" subTitle='Proyecto' />
 			<p class="text-lg text-primary-900">Somos un proyecto que se orienta a elaborar una guía de evaluación de impactos ambientales y criterios de sustentabilidad para plantas desalinizadoras de agua de mar mediante la tecnología de osmosis inversa. Esta guía será producto de la investigación que lleva a cabo el equipo de IDRO y tendrá como principal resultado propuestas metodológicas de evaluación de impactos ambientales que dependerán del tamaño de los proyectos.
 			</p>
@@ -26,41 +27,59 @@ import HeaderTitle from './HeaderTitle.astro';
 			IDRO tiene un carácter transdiciplinario para lo cual el núcleo de investigadores abarca disciplinas como la ingeniería ambiental, ingeniería química, ingeniería oceánica, oceanografía, biología marina y economía.</p>
 			
 		</section>
-		<section class="px-10 flex flex-col gap-4">
+		<section class="pl-2 pr-10 flex flex-col gap-4">
 			<Calendar />
 			<Refers />
 			<Team />
 		</section>
-		<section class="col-span-2 bg-primary-400 px-10 py-10 flex flex-col gap-7 2xl:gap-12 ">
+		<section class="col-span-2 bg-primary-400 px-10 py-10 flex flex-col gap-7 2xl:gap-12" id="contexto">
 			<article class="flex flex-col gap-4 drop-shadow-2xl shadow-inner rounded-md">
 				<h2 class="text-2xl font-bold text-white">Contexto</h2>
-				<p class="text-lg text-white">En el actual escenario de sequía, la tecnología de osmosis inversa se presenta como una forma atractiva para desalinizar agua de mar y producir agua dulce para el consumo humano, la minería, la agricultura y para la producción de hidrógeno verde. <br />
-				Para generar agua dulce mediante este proceso, el agua de mar es captada y circulada por filtros y membranas, generándose tanto agua dulce como agua de descarte <span class="text-secondary-500 font-bold">(conocida como salmuera),</span> cuya salinidad es superior a la del agua de mar.
-	
+				<p class="text-lg text-white">En el actual escenario de sequía, la tecnología de osmosis inversa se presenta como una forma atractiva para desalinizar agua de mar y producir agua dulce para el consumo humano, la minería, la agricultura y para la producción de hidrógeno verde.
+				Todo comienza con capturar el agua de mar y circularla por filtros y membranas, generándose tanto agua dulce como agua de descarte <span class="text-secondary-500 font-bold">(conocida como salmuera),</span> cuya salinidad es superior a la del agua de mar. <br />
 				La cantidad de energía que se requiere para operar estas plantas y la gran cantidad de filtros y membranas que son utilizados,aportan al cambio climático y agotamiento de algunos materiales.
 	
 				En la actualidad, <span class="text-secondary-500 font-bold">el Sistema de Evaluación Ambiental (SEA)</span>  cuenta con una Guía para la descripción de proyectos de plantas desalinizadoras en el SEIA, enfocándose en: descripción del emplazamiento, partes y fases del proyecto y legislación ambiental aplicable; sin embargo, no define metodologías de evaluación que permitan establecer su cuantía.
 				
 				</p>
 			</article>
+			<!-- <section class="mx-auto flex w-full max-w-screen-2xl flex-col gap-4 px-4 md:flex-row md:items-center md:px-0">
+				<section>
+					<details open class="group panel p-4 text-left">
+						<summary class="text-2xl font-bold text-white  heading-4 flex w-full cursor-pointer select-none items-center justify-between">Línea 1: Impactos ambientales de desalinizadoras</summary>
+						<p class="text-lg text-white">Mediante la metodología de Análisis de Ciclo de Vida (ACV), cuantificaremos impactos ambientales tales como emisiones de gases de efecto invernadero, agotamiento de recursos (por ejemplo, por recambio de membranas) y consumo de agua dulce, entre otros. La metodología no sólo permite cuantificar los impactos durante la producción de agua dulce, sino también de subprocesos como la producción de filtros y membranas de recambio que también tienen un impacto, por ejemplo, en la generación de gases de efectos invernadero.</p>
+					</details>
+					<details class="text-2xl font-bold text-white accordion heading-4 flex w-full cursor-pointer select-none items-center justify-between">
+						<summary class="text-2xl font-bold text-white">Línea 2: Efectos de salinidad de la salmuera</summary>
+						<p class="text-lg text-white">En condiciones de laboratorio, evaluaremos cómo diferentes niveles de salinidad afectan la condición larval de dos especies de importancia ecológica y económica. Para ello realizamos ensayos en las instalaciones de <span class="font-bold text-secondary-500"> CIMARQ  <a href="https://cimarq.unab.cl" target="_blank">(https://cimarq.unab.cl/)</a> (UNAB)</span>  utilizando larvas de locos y erizo rojo, las cuales serán expuestas a salmueras de descarte de desalinizadoras que operan en el país. Analizando como influye su capacidad mediante el procesamiento de imágenes, se estudiará la trayectoria y velocidad, para determinar el efecto del agua de descarte.</p>
+					</details>
+					<details class="text-2xl font-bold text-white accordion heading-4 flex w-full cursor-pointer select-none items-center justify-between">
+						<summary class="text-2xl font-bold text-white">Línea 3: Evaluación de la pluma de la Salmuera</summary>
+						<p class="text-lg text-white">Realizaremos un estudio avanzado de la dinámica de mezcla de la salmuera en el entorno marino. Mediante una combinación de modelización numérica, análisis de datos de campo y experimentación en laboratorio, buscaremos comprender los patrones de movimiento, dilución y los posibles impactos ecológicos de las plumas de salmuera. Esta investigación es relevante para determinar las distancias de seguridad para la vida marina, así como para el diseño de estrategias de descarga que minimicen los impactos adversos.</p>
+					</details>
+				</section>
+				<section>
+					<h2>Imagenes</h2>
+				</section>
+			</section> -->
 			<section class="flex flex-col lg:grid lg:grid-cols-3 lg:gap-5 ">
-				<article class="flex flex-col justify-start items-center gap-2 2xl:gap-4 h-full group hover:bg-white ease-in-out duration-300 hover:scale-105 antialiased  drop-shadow-2xl shadow-inner rounded-md ">
-					<Image src={Linea1} alt="Equipo"  class="w-full object-scale-down contain object-center rounded-xl h-80 " />
+				<article class="flex flex-col justify-start gap-2 p-3 2xl:gap-4 h-full drop-shadow-2xl shadow-inner rounded-md  duration-300 ease-in-out hover:scale-105 antialiased hover:border-primary-200 hover:border-2 hover:border-solid">
+					<Image src={Linea1} alt="Equipo"  class="w-full h-80 object-contain object-center rounded-3xl " />
 					<header>
 						<h3 class="text-xl text-center font-bold text-secondary-600">Línea 1: Impactos ambientales de desalinizadoras</h3>
 					</header>
 
 					<p class="text-lg text-center text-white group-hover:text-black transition-colors">Mediante la metodología de Análisis de Ciclo de Vida (ACV), cuantificaremos impactos ambientales tales como emisiones de gases de efecto invernadero, agotamiento de recursos (por ejemplo, por recambio de membranas) y consumo de agua dulce, entre otros. La metodología no sólo permite cuantificar los impactos durante la producción de agua dulce, sino también de subprocesos como la producción de filtros y membranas de recambio que también tienen un impacto, por ejemplo, en la generación de gases de efectos invernadero.</p>
 				</article>
-				<article class="flex flex-col justify-start items-center gap-2 2xl:gap-4 h-full drop-shadow-2xl shadow-inner rounded-md p-3">
-					<Image src={Linea2} alt="Equipo" class="w-full h-80 object-scale-down object-center rounded-3xl duration-300 hover:scale-110 antialiased" />
+				<article class="flex flex-col justify-start gap-2 p-3 2xl:gap-4 h-full drop-shadow-2xl shadow-inner rounded-md  duration-300 ease-in-out hover:scale-105 antialiased hover:border-primary-200 hover:border-2 hover:border-solid">
+					<Image src={Linea2} alt="Equipo" class="w-full h-80 object-contain object-center rounded-3xl" />
 					<header>
 						<h3 class="text-xl text-center font-bold text-secondary-600">Línea 2: Efectos de salinidad de la salmuera</h3>
 					</header>
 
 					<p class="text-lg text-center text-white">En condiciones de laboratorio, evaluaremos cómo diferentes niveles de salinidad afectan la condición larval de dos especies de importancia ecológica y económica. Para ello realizamos ensayos en las instalaciones de <span class="font-bold text-secondary-500"> CIMARQ  <a href="https://cimarq.unab.cl" target="_blank">(https://cimarq.unab.cl/)</a> (UNAB)</span>  utilizando larvas de locos y erizo rojo, las cuales serán expuestas a salmueras de descarte de desalinizadoras que operan en el país. Analizando como influye su capacidad mediante el procesamiento de imágenes, se estudiará la trayectoria y velocidad, para determinar el efecto del agua de descarte.</p>
 				</article>
-				<article class="flex flex-col justify-start gap-2 p-3 2xl:gap-4 h-full drop-shadow-2xl shadow-inner rounded-md  duration-300 ease-in-out hover:scale-105 antialiased hover:border-white hover:border-2 hover:border-solid">
+				<article class="flex flex-col justify-start gap-2 p-3 2xl:gap-4 h-full drop-shadow-2xl shadow-inner rounded-md  duration-300 ease-in-out hover:scale-105 antialiased hover:border-primary-200 hover:border-2 hover:border-solid">
 					<Image src={Linea3} alt="Equipo" class="w-full h-80 object-contain object-center rounded-3xl" />
 					<header>
 						<h3 class="text-xl font-bold text-secondary-600">Línea 3: Evaluación de la pluma de la Salmuera</h3>
@@ -70,7 +89,7 @@ import HeaderTitle from './HeaderTitle.astro';
 				</article>
 			</section>
 		</section>
-		<section class="px-5 col-span-2">
+		<section class="px-5 col-span-2" id="founding">
 			<Funding />
 		</section>
 	</section>
