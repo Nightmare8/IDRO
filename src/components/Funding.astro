@@ -7,31 +7,45 @@ import UV from '../images/logo/uv.png'
 import Anid from '../images/logo/anid.png'
 import logoCasaBlanca from '../images/logo/logoCasaBlanca.png'
 import logoViña from '../images/logo/logoViña.jpg'
+import logoAgencia from '../images/logo/logoAgencia.png'
+import logoQuintay from '../images/logo/logoQuintay.png'
 ---
 
-<section class=" flex flex-col items-center md:flex-row justify-around w-full">
-    <section>
+<section class=" flex flex-col items-center md:flex-row justify-evenly w-full">
+    <section class=" flex flex-col lg:flex-row xl:flex-col">
         <article class="flex flex-col justify-start items-center md:items-start p-3 gap-2">
             <header>
                 <h3 class="text-xl font-medium text-gray-400">
-                    Desarollador por:
+                    Desarrollado por:
                 </h3>
             </header>
             <hr class="bg-gray-500 border-1 w-full" />
-            <section class="flex flex-col xl:flex-row gap-4">
+            <section class="flex flex-col xl:flex-row gap-5">
                 <Image src={USM} alt="USM" class="w-auto h-28 object-contain" />
                 <Image src={UV} alt="UV" class="w-auto h-24 object-contain" />
                 <Image src={UNAB} alt="UNAB" class="w-auto h-24 object-contain" />
+                <section class="flex flex-col xl:hidden">
+                    <header>
+                        <h3 class="text-xl font-medium text-gray-400">
+                            Financiado por:
+                        </h3>
+                    </header>
+                    <hr class="bg-gray-500 w-24" />
+                    <Image src={Anid} alt="UV" class="w-auto h-60 object-contain" />
+                    <h3 class="text-xl font-medium text-gray-400">
+                        ANID IDEA I+D ID23I10336 
+                    </h3>
+                </section>
             </section>
         </article>
-        <article class="flex flex-col justify-start items-center md:items-start p-3 gap-2">
+        <article class="flex flex-col flex-wrap justify-start items-center md:items-start p-3 gap-2">
             <header>
                 <h3 class="text-xl font-medium text-gray-400">
                     Instituciones asociadas:
                 </h3>
             </header>
             <hr class="bg-gray-500 border-1 w-full" />
-            <section class="flex flex-col xl:flex-row gap-4">
+            <section class="flex flex-col flex-wrap xl:flex-row  gap-4">
                 <Image src={logoCasaBlanca} alt="UV" class="w-auto h-52 object-contain" />
                 <Image src={logoViña} alt="UNAB" class="w-auto h-52 object-contain" />
                 <!-- <h4 class="text-xl font-medium text-gray-400">
@@ -39,8 +53,23 @@ import logoViña from '../images/logo/logoViña.jpg'
                 </h4> -->
             </section>
         </article>
+        <article class="flex flex-col flex-wrap justify-start items-center md:items-start p-3 gap-2">
+            <header>
+                <h3 class="text-xl font-medium text-gray-400">
+                    Instituciones colaboradoras:
+                </h3>
+            </header>
+            <hr class="bg-gray-500 border-1 w-full" />
+            <section class="flex flex-col flex-wrap xl:flex-row  gap-4">
+                <Image src={logoAgencia} alt="UNAB" class="w-auto h-52 object-contain" />
+                <Image src={logoQuintay} alt="UNAB" class="w-auto h-36 object-contain p-2" />
+                <!-- <h4 class="text-xl font-medium text-gray-400">
+                    Municipalidad de Viña del Mar
+                </h4> -->
+            </section>
+        </article>
     </section>
-    <article class="flex flex-col justify-start items-center md:items-start p-3 gap-2">
+    <article class="hidden xl:flex xl:flex-col justify-start items-center md:items-start p-3 gap-2 ">
         <header>
             <h3 class="text-xl font-medium text-gray-400">
                 Financiado por:
