@@ -1,6 +1,6 @@
 ---
 interface Props{
-    subTitle: string;
+    subTitle?: string;
     title: string;
 }
 
@@ -8,6 +8,6 @@ interface Props{
 const { subTitle, title } = Astro.props;
 ---
 <div>
-    <h3 class="text-primary-300">{subTitle}</h3>
+    {subTitle && <h3 class="text-primary-300">{subTitle}</h3>}
     <h2 class="text-2xl font-bold text-black">{title}</h2>
 </div>
