@@ -1,0 +1,6 @@
+{
+	"name": "idro",
+	"assets": {
+		"directory": "./dist/_astro"
+	}
+}
