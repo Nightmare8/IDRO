@@ -27,9 +27,11 @@ jobs:
             - name: Deploy files via FTP
               uses: SamKirkland/FTP-Deploy-Action@v4.3.4
               with:
-                  server: 207.210.83.165
-                  username: idrochil
+                  server: ftp.idrochile.cl
+                  username: test@idrochile.cl
                   password: 6PYdH]idP0{l
-                  local-dir: ./dist/
                   # server-dir: ${{ secrets.FTP_PATH }}
                   server-dir: /public_ftp/
+                  port: 21
+                  protocol: ftps
+                  local-dir: ./dist/
