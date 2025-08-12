@@ -1,15 +1,55 @@
 ---
 interface Props {
-    link: string;
-    title: string;
+	link?: string;
+	title: string;
+	downloadFile?: string;
 }
 
-const  { link, title } = Astro.props;
+const { link, title, downloadFile } = Astro.props;
 ---
 
 <aside class="flex justify-start items-center gap-2">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#00aea5" class="bi bi-arrow-right" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
-    </svg>
-    <a href={link} target="_blank" class="text-secondary-400 hover:underline">{title}</a>
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		width="20"
+		height="20"
+		fill="#00aea5"
+		class="bi bi-arrow-right"
+		viewBox="0 0 16 16"
+	>
+		<path
+			fill-rule="evenodd"
+			d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
+		></path>
+	</svg>
+	{
+		link ? (
+			<a
+				href={link}
+				target="_blank"
+				class="text-secondary-400 hover:underline"
+			>
+				{title}
+			</a>
+		) : (
+			<a
+				href={downloadFile}
+				download
+				class="text-secondary-400 hover:underline"
+			>
+				{title}
+			</a>
+		)
+	}
+	{
+		downloadFile && (
+			<a
+				href={downloadFile}
+				download
+				class="text-secondary-400 hover:underline"
+			>
+				(Descargar)
+			</a>
+		)
+	}
 </aside>
