@@ -30,6 +30,6 @@ jobs:
                   server: 207.210.83.165
                   username: idrochil
                   password: 6PYdH]idP0{l
-                  local-dir: ./dist
+                  local-dir: ./dist/
                   # server-dir: ${{ secrets.FTP_PATH }}
                   server-dir: /public_ftp/
