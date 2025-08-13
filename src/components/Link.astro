@@ -1,11 +1,15 @@
 ---
+import PictureModal from "./PictureModal.astro";
+
 interface Props {
 	link?: string;
 	title: string;
+	showImage?: string;
+	altImage?: string;
 	downloadFile?: string;
 }
 
-const { link, title, downloadFile } = Astro.props;
+const { link, title, showImage, altImage, downloadFile } = Astro.props;
 ---
 
 <aside class="flex justify-start items-center gap-2">
@@ -22,8 +26,9 @@ const { link, title, downloadFile } = Astro.props;
 			d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
 		></path>
 	</svg>
+
 	{
-		link ? (
+		link && (
 			<a
 				href={link}
 				target="_blank"
@@ -31,7 +36,9 @@ const { link, title, downloadFile } = Astro.props;
 			>
 				{title}
 			</a>
-		) : (
+		)
+	}
+	{!link && downloadFile && (
 			<a
 				href={downloadFile}
 				download
@@ -39,8 +46,13 @@ const { link, title, downloadFile } = Astro.props;
 			>
 				{title}
 			</a>
-		)
-	}
+		
+	)}
+	{showImage && altImage &&
+
+		<PictureModal title={title} image={showImage} alt={altImage}
+	
+	/>}
 	{
 		downloadFile && (
 			<a

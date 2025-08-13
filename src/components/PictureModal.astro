@@ -1,0 +1,75 @@
+---
+interface Props {
+	title: string;
+	image: string;
+	alt: string;
+}
+
+const { title, image, alt } = Astro.props;
+---
+
+<button
+	type="button"
+	id="open-modal"
+	class="open-modal-btn text-secondary-400 hover:underline"
+	data-image={image}
+	data-alt={alt}
+>
+	{title}
+</button>
+
+<div
+	id="overlay"
+	class="hidden fixed inset-0 bg-black/90 z-40 opacity-0 transition-opacity duration-300"
+>
+</div>
+
+<dialog id="modal" class="z-50 max-w-[60vw] max-h-[90vh] h-fit fixed top-[8%] bg-black/90">
+	<img id="modalImage" class="max-w-full max-h-[85vh] object-contain rounded-lg bg-[rgb(0 0 0 / 0.9)] overflow-scroll" />
+</dialog>
+
+<script>
+	const modal = document.querySelector("#modal");
+	const modalImage = document.getElementById("modalImage") as HTMLImageElement;
+	const button = document.querySelectorAll(".open-modal-btn");
+	const overlay = document.getElementById("overlay");
+
+	let isOpenModal = false;
+
+	button?.forEach((btn) => {
+		btn?.addEventListener("click", () => {
+			const image = btn.getAttribute("data-image");
+            const alt = btn.getAttribute("data-alt");
+            if (!image || !alt) return;
+			modalImage.src = image;
+			modalImage.alt = alt;
+			isOpenModal = !isOpenModal;
+			if (isOpenModal) {
+				modal?.setAttribute("open", "");
+				modal?.classList.remove("opacity-0");
+				overlay?.classList.remove("hidden");
+				setTimeout(() => overlay?.classList.remove("opacity-0"), 10);
+
+				modalImage?.classList.add("animate-[zoom_0.6s_ease-in-out]");
+				setTimeout(
+					() => modal?.classList.remove("animate-fade-in"),
+					1000
+				);
+			} else {
+				modal?.removeAttribute("open");
+				modal?.classList.add("opacity-0");
+				overlay?.classList.add("opacity-0");
+				setTimeout(() => overlay?.classList.add("hidden"), 300);
+			}
+		});
+	});
+
+	//Function to close the modal when clicking outside of it
+	overlay?.addEventListener("click", () => {
+		isOpenModal = false;
+		modal?.removeAttribute("open");
+		modal?.classList.add("opacity-0");
+		overlay?.classList.add("opacity-0");
+		setTimeout(() => overlay?.classList.add("hidden"), 300);
+	});
+</script>
