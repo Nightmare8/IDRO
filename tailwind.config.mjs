@@ -64,6 +64,34 @@ export default {
 				primary: ["Ubuntu", "sans-serif"],
 				secondary: ["var(--font-sans)", "sans-serif"],
 			},
+			keyframes: {
+				"fade-in": {
+					"0%": { opacity: "0" },
+					"100%": { opacity: "1" },
+				},
+				zoom: {
+					"0%": { transform: "scale(0)" },
+					"100%": { transform: "scale(1)" },
+				},
+				wiggle: {
+					"0%, 100%": { transform: "rotate(-3deg)" },
+					"50%": { transform: "rotate(3deg)" },
+				},
+				changeToRed: {
+					"0%": {
+						backgroundColor: "none",
+					},
+					"100%": {
+						backgroundColor: "red",
+					},
+				},
+			},
+			animation: {
+				"spin-slow": "spin 1s linear infinite",
+				"fade-in": "fade-in 1s ease-in-out forwards",
+				"change-color": "changeToRed 1s ease-in-out",
+				scale: "zoom 1s ease-in-out",
+			},
 		},
 	},
 	plugins: [],
